@@ -81,17 +81,20 @@ function Admin() {
 
   return (
     <>
-      {showData.map((elem) => (
+      {showData.map((elem) => {
+        console.log('elem->' ,elem)
+        return(
         <div key={elem.id} className="hero w-[40em] h-[10em] bg-base-200 mt-5">
-          <div className="hero-content flex-col ml-[-30em] lg:flex-row">
-            <img src={elem.userFile} className="max-w-sm rounded-lg shadow-2xl w-[8em]" alt="User Avatar" />
-            <div className="ml-[20em] mt-[-8em]">
+          <div className="flex">
+            <img style={{height :130 , width : 130}} src={elem.userFile} className="max-w-sm rounded-lg shadow-2xl ml-[-4em]" alt="User Avatar" />
+            <div className="ml-[10em] mt-[-5.5em]">
               <h1 className="text-2xl font-bold mt-[4em]">{elem.userName}</h1>
               <p className="py-6">{elem.userEmail}</p>
             </div>
+
           </div>
-        </div>
-      ))}
+        </div>)
+      })}
 
       {/* <img src="C:\Users\Personal\Desktop\ubaid raza\other work\React Practice\starting-firebase\public\logo512.png" alt="" /> */}
     </>
